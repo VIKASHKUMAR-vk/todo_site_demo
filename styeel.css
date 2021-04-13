@@ -2,34 +2,8 @@ body{
     background-color: rgb(141, 138, 179);
     height: 300px;
     animation-name: bgcolor;
-    animation-duration: 6s;
-    animation-direction: alternate-reverse;
-    animation-iteration-count: infinite;
-}
-@keyframes bgcolor{
-  0%{
-    background-color:  rgb(233, 93, 93);
-    }
-  20%{
-    background-color:  rgb(175, 216, 109);
+    
 
-      }
-  50%{
-    background-color:  rgb(155, 229, 220);
-
-        }
-  60%{
-    background-color:  rgb(143, 127, 212);
-
-    }
-  80%{
-    background-color:  rgb(224, 144, 214);
-
-      }
-  100%{
-    background-color:  rgb(247, 155, 155);
-
-        }
 
 }
 
