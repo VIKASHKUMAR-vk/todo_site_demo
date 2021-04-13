@@ -46,7 +46,7 @@ ul li {
     background: #eee;
     font-size: 9px;
     transition: 0.2s;
-    overflow: auto;
+    overflow: hidden;
 
   
     /* make the list items unselectable */
