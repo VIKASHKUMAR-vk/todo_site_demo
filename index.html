@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>TODO site task</title>
+    <link rel="shortcut icon" href="joki.ico" type="image/x-icon">  
+    <link rel="stylesheet" href="styeel.css">
+    <script src="https://kit.fontawesome.com/c61ba56e15.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1 style="text-transform: uppercase; text-align: center; font-size: small; color: rgb(17, 5, 92);">welcome to <span>
+        <a href="/index.html" style="color: red;">todo</a></span> site....</h1>
+        
+    <hr>
+    <section>
+        <div class="left">
+            <h1 style="color: rgb(35, 3, 65);">VIKASH KUMAR</h1>
+            <table class="tasktable">
+                <p>Yesterday</p>
+                <P>Today</P>
+                <p>Tomorrow</p>
+            </table>
+
+        </div>
+        <div class="right">
+            <H1 style="text-align: center; font-size: small;"><i class="far fa-edit"></i>TODO list is here....</H1><hr>
+            <ul id="myUL">
+                <li>Hit the gym</li>
+                <li class="checked">Pay bills</li>
+                <li>Meet George</li>
+                <li>Buy eggs</li>
+                <li>Read a book</li>
+                <li>Organize office</li>
+              </ul>
+
+              <div id="myDIV" class="header">
+                <input type="text" id="myInput" placeholder="Add new task here....">
+                <span onclick="newElement()" class="addBtn">&#x2b</span>
+              </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy;Copyright 2021-2025 by VIKASH KUMAR. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+          var span = document.createElement("SPAN");
+          var txt = document.createTextNode("\u00D7");
+          span.className = "close";
+          span.appendChild(txt);
+          myNodelist[i].appendChild(span);
+        }
+        
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+          close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+          }
+        }
+        
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.querySelector('ul');
+        list.addEventListener('click', function(ev) {
+          if (ev.target.tagName === 'LI') {
+            ev.target.classList.toggle('checked');
+          }
+        }, false);
+        
+        // Create a new list item when clicking on the "Add" button
+        function newElement() {
+          var li = document.createElement("li");
+          var inputValue = document.getElementById("myInput").value;
+          var t = document.createTextNode(inputValue);
+          li.appendChild(t);
+          if (inputValue === '') {
+            alert("You must write something!");
+          } else {
+            document.getElementById("myUL").appendChild(li);
+          }
+          document.getElementById("myInput").value = "";
+        
+          var span = document.createElement("SPAN");
+          var txt = document.createTextNode("\u00D7");
+          span.className = "close";
+          span.appendChild(txt);
+          li.appendChild(span);
+        
+          for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+              var div = this.parentElement;
+              div.style.display = "none";
+            }
+          }
+        }
+        
+        
+        
+                </script>
+                
+</body>
+</html>
